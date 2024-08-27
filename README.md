@@ -1,2 +1,2 @@
-# quickBio-docs
- quickBio-docs
+# quickBio-guide
+ quickBio-guide
