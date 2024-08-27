@@ -1,0 +1,1 @@
+Permite usar cada una de las columna del grupo `Datos` para gráficar y ver la cantidad de individuos y su distribución

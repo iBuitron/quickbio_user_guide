@@ -1,0 +1,184 @@
+site_name: QuickBio user guide
+site_description: QuickBio user guide
+site_url: https://mydomain.org/mysite
+# repo_url: https://github.com/iBuitron
+# repo_name: squidfunk/mkdocs-material
+copyright: Copyright & copy; 2024 - Italo Buitrón
+theme:
+  name: material
+  logo: assets/quickbio.png
+  favicon: assets/quickbio.png
+
+  icon:
+    repo: fontawesome/brands/github-alt
+  
+  features:
+    - search.suggest
+    - search.highlight
+
+    - navigation.instant
+    - navigation.instant.preview
+    - navigation.tabs
+    - navigation.top
+    - navigation.tabs.sticky
+    # - navigation.sections
+    - navigation.expand
+    - navigation.path
+    # - navigation.prune
+    - navigation.indexes
+
+    - toc.follow
+    # - toc.integrate
+    - content.tabs.link
+    # - navigation.footer
+
+  # palette: 
+  #   # Palette toggle for dark mode
+  #   - scheme: default
+  #     primary: teal
+  #     accent: amber
+  #     toggle:
+  #       icon: material/weather-night
+  #       name: Switch to dark mode
+
+  #   # Palette toggle for light mode
+  #   - scheme: slate
+  #     primary: teal
+  #     accent: amber
+  #     toggle:
+  #       icon: material/weather-sunny 
+  #       name: Switch to light mode
+  palette:
+      # Note: Using the system theme works with the insiders version
+      # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#automatic-light-dark-mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      toggle:
+        icon: material/weather-sunny 
+        name: Switch to dark mode
+
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+extra:
+  homepage: http://127.0.0.1:8000/ # Redirect When click on logo
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/iBuitron
+    # - icon: fontawesome/brands/discord
+    #   link: https://discord.gg/VQjSZaeJmf
+    # - icon: fontawesome/brands/twitter
+    #   link: https://twitter.com/fastapi
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/italobuitron/
+    # - icon: fontawesome/brands/dev
+    #   link: https://dev.to/tiangolo
+    # - icon: fontawesome/brands/medium
+    #   link: https://medium.com/@tiangolo
+    # - icon: fontawesome/solid/globe
+    #   link: https://tiangolo.com
+  # analytics:
+  #   provider: google
+  #   property: G-XXXXXXXXXX
+  generator: false
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - def_list
+  # tabs
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  # grids
+  - attr_list
+  - md_in_html
+
+  # - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  - admonition
+  - pymdownx.details
+  
+
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+
+  - toc:
+      permalink: true
+      
+      
+      
+
+plugins:
+  - search:
+      enabled: true
+      lang:
+        - es
+
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: es
+          default: true
+          name: Español
+          build: true
+
+        # - locale: en
+        #   name: English
+        #   build: true
+
+        # - locale: fr
+        #   name: Français
+        #   build: true  
+
+      fallback_to_default: true
+
+
+nav:
+  - QuickBio: index.md
+  - Conceptos previos: concepts/index.md
+  - Guia:  
+    - guide/index.md
+    - QuickBio Format: 
+      - guide/format/index.md  
+        
+    - Modulos:
+      - guide/module/valid-names.md
+      
+      - Country book: 
+        - guide/module/country_book/index.md
+        - Peru: guide/module/country_book/peru.md
+
+      - Analisis de biodiversidad:
+        - guide/module/analysis/index.md
+        - Filtros: guide/module/analysis/filters.md
+        - Analisis: 
+          - Abundancia: guide/module/analysis/abundance.md
+          - Riqueza: guide/module/analysis/richness.md
+            
+  - Ejemplos:
+    - examples/index.md
+    
+    

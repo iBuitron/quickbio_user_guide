@@ -1,0 +1,1 @@
+Usa la columna `abundance` del grupo `Datos` para gráficar y obtener la riqueza de estos.
